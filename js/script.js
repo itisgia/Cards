@@ -12,6 +12,8 @@
 		var message = document.getElementById('message');
 		//making new style sheet to change ::After element in js
 		var styleElem = document.head.appendChild(document.createElement("style"));
+		var styleEle = document.head.appendChild(document.createElement("style"));
+		var styleEl = document.head.appendChild(document.createElement("style"));
 
 
 	//TEST
@@ -74,17 +76,15 @@
  }
 
  function borderChange (){
-	 var border = window.getComputedStyle(
-     document.querySelector('.noBorder'), ':after'
- );
 
- console.log(border);
-	 // if (border.value == 'thin') {
-		//  styleElem.style.border = "3em solid black"
+	 if (border.value == 'thin') {
+     styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }"
 
+	 }else if (border.value == 'thick') {
+	 	styleEle.innerHTML = ".card>div, .card:after {border: 2em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round } "
+	} else {
+		styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 25% round }"
+	}
+	}
 
-
- }
-
-
-	}()); //iife ENDS
+		}()); //iife ENDS
