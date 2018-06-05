@@ -1,7 +1,7 @@
 
 	(function() {
 
-		//global var
+		//get DOM
 	  var store = []
 		var makeCard = document.getElementById('subbmit');
 		var images = document.getElementById('image');
@@ -10,10 +10,10 @@
 		var border = document.getElementById('border');
     var cardImage = document.getElementById('cardImage');
 		var message = document.getElementById('message');
+
 		//making new style sheet to change ::After element in js
 		var styleElem = document.head.appendChild(document.createElement("style"));
 		var styleEle = document.head.appendChild(document.createElement("style"));
-		var styleEl = document.head.appendChild(document.createElement("style"));
 
 
 	//TEST
@@ -29,6 +29,7 @@
 
 	 if (images.value == 'christmas'){
 		 cardImage.src = 'assets/christmas.jpg';
+		 console.log('chrisssswiiiiiiwoopspdpsdp');
 	 } else if(images.value == 'birthday') {
 		 cardImage.src = 'assets/birthday.jpg';
 	 } else{
@@ -42,8 +43,6 @@
  //background color Chage functuon
 
  function backgroundColor(){
-
-
 	 var back = document.getElementsByClassName('celadonBackground');
 	 if (background.value == 'celadon') {
 			styleElem.innerHTML = ".celadonBackground>div, .celadonBackground:after  {background: #9dcc78}"
@@ -57,7 +56,6 @@
  }
 
  //font chane function
-
  function fontChnage() {
 	 var h1 = document.getElementsByClassName('sketch');
 	 if (font.value == 'handwriting') {
@@ -75,16 +73,20 @@
 
  }
 
+//border change function if value is that, change it
  function borderChange (){
-
-	 if (border.value == 'thin') {
-     styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }"
-
-	 }else if (border.value == 'thick') {
-	 	styleEle.innerHTML = ".card>div, .card:after {border: 2em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round } "
-	} else {
-		styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 25% round }"
+		if (border.value == 'thin') {
+	     styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }"
+		 } else if (border.value == 'thick') {
+			 console.log('thickthick');
+		 	styleEle.innerHTML = ".card>div, .card:after {border: 2em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round } "
+		} else if (border.value == 'filled') {
+			styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 25% round }"
+		} else{
+			styleEle.innerHTML = "";
+		}
 	}
-	}
 
+
+//is there a way to clean this code???
 		}()); //iife ENDS
