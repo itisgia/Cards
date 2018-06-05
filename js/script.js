@@ -1,6 +1,7 @@
 
 	(function() {
 
+
 		//get DOM
 	  var store = []
 		var makeCard = document.getElementById('subbmit');
@@ -20,11 +21,18 @@
 	//when the button is clicked this fuction happens
 	$('#subbmit').click(function(){
 		 pictureChange();
+		 sub();
 	}); // submit functuon ENDS
 
 
+	//submit
+
+	function sub (){
+		document.getElementById("formAc").submit();
+	}
 	// change images of card with if / else statement
 	// if image's value is this, change the attribute
+
  function pictureChange(){
 
 	 if (images.value == 'christmas'){
@@ -74,19 +82,17 @@
  }
 
 //border change function if value is that, change it
- function borderChange (){
-		if (border.value == 'thin') {
-	     styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }"
-		 } else if (border.value == 'thick') {
-			 console.log('thickthick');
-		 	styleEle.innerHTML = ".card>div, .card:after {border: 2em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round } "
-		} else if (border.value == 'filled') {
-			styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 25% round }"
-		} else{
-			styleEle.innerHTML = "";
-		}
+function borderChange (){
+	if (border.value == 'think') {
+		styleEle.innerHTML = ".card>div, .card:after {border: 2em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }";
+	} else if (border.value == 'none') {
+		styleEle.innerHTML = ".card>div, .card:after {border: none }";
+	} else if (border.value == 'thin') {
+		styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 33.3333333333333% round }";
+	} else {
+			styleEle.innerHTML = ".card>div, .card:after {border: 1em solid transparent;-webkit-border-image: url(assets/border.png) 25% round }";
 	}
-
+}
 
 //is there a way to clean this code???
 		}()); //iife ENDS
